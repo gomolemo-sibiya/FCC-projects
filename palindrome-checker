@@ -1,0 +1,13 @@
+function palindrome(str) {
+    var stringWord = str.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+    let reverseString = stringWord.split("").reverse().join("");
+  
+    if(stringWord === reverseString){
+        return true;
+    }
+    else {
+        return false;
+    }
+  }
+  
+palindrome("race car");
