@@ -1,0 +1,26 @@
+function telephoneCheck(str) {
+
+    //Set the validation variables 
+    let valueDash3and4 = /^\d{3}-\d{3}-\d{4}$/;
+    let oneSpaceValueDash = /^1 \d{3}-\d{3}-\d{4}$/;
+    let oneSpaceBracketValueDash = /^1 \(\d{3}\) \d{3}-\d{4}$/;
+    let straightValue = /^\d{10}$/;
+    let bracketValueDash3and4 = /\(\d{3}\)\d{3}-\d{4}/;
+    let bracket3Dash4 = /^\(d{3}\)\d{3}-\d{4}$/;
+    let oneSpace3and4 = /^1 \d{3} \d{3} \d{4}$/;
+    let oneBracket3Dash4 = /1\(\d{3}\)\d{3}-\d{4}/;
+
+    const validationValues = [valueDash3and4, oneSpaceValueDash, oneSpaceBracketValueDash, straightValue, bracketValueDash3and4, bracket3Dash4, oneSpace3and4, oneBracket3Dash4];
+    
+    const validTelephoneNumber =  validationValues.some((telNumber) => telNumber.test(str));
+    
+    if(validTelephoneNumber){
+        console.log("Proper");
+    }
+    else {
+        console.log("Not Proper");
+    }
+    return validTelephoneNumber;
+}
+  
+telephoneCheck("2(757)622-7382");
